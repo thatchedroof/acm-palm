@@ -1,0 +1,29 @@
+{% extends "template.html" %}
+{% block content %}
+<h3>Let's see what you uploaded!</h3>
+
+<style>
+.split_container {
+  display: flex;
+  flex-direction: column;
+}
+</style>
+
+<p>
+  <strong>File Name:</strong> {{ file_name }}
+  <br>
+  <strong>Current Prompt:</strong> {{ prompt }}
+<p>
+
+<div class="split_container">
+  <div class="container">
+    <h5>Content:</h5>
+
+    <p>{{ content }}</p>
+  </div>
+  <div class="container">
+    <h5>PaLM Output:</h5>
+    <p>{{ ai|safe }}</p>
+  </div>
+</div>
+{% endblock %}
